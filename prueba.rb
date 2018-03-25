@@ -26,6 +26,8 @@ while opcion != 4
       nombres = []
       arr.each do |nota|
         notas.push((nota[1].to_i + nota[2].to_i + nota[3].to_i + nota[4].to_i + nota[5].to_i)/5.to_f)
+        #es mejor parametrizar el largo del arreglo siempre
+        #  notas.push((nota[1].to_i + nota[2].to_i + nota[3].to_i + nota[4].to_i + nota[5].to_i)/arr.length.to_f)
       end
       arr.each do |nombre|
         nombres.push(nombre[0])
@@ -50,10 +52,13 @@ while opcion != 4
     when 2       # Muestra inasistencias totales en pantalla
       arr = []
       lines.each do |line|
-          arr.push(line.split(', '))
+        print arr.push(line.split(', '))
+        # puedes eliminar el \n con chomp para generar menos codigo despues
+        # print arr.push(line.split(', ').map{ |r| r.chomp})
       end
-
+      
       puts "Inasistencias totales del curso: #{arr[0].count{|i| i == "A" || i =="A\n"} + arr[1].count{|i| i == "A" || i =="A\n"} + arr[2].count{|i| i == "A" || i =="A\n"} + arr[3].count{|i| i == "A" || i =="A\n"}}"
+      # con chomp no necesitarias la igualdad de i =="A\n"
       puts  "#{arr[0][0]} tuvo #{arr[0].count{|i| i == "A" || i =="A\n"}} inasistencias"
       puts  "#{arr[1][0]} tuvo #{arr[1].count{|i| i == "A" || i =="A\n"}} inasistencias"
       puts  "#{arr[2][0]} tuvo #{arr[2].count{|i| i == "A" || i =="A\n"}} inasistencias"
@@ -74,6 +79,8 @@ while opcion != 4
         nombres = []
         arr.each do |nota|
           notas.push((nota[1].to_i + nota[2].to_i + nota[3].to_i + nota[4].to_i + nota[5].to_i)/5.to_f)
+          #falta parametrizar el largo del arreglo
+          #notas.push((nota[1].to_i + nota[2].to_i + nota[3].to_i + nota[4].to_i + nota[5].to_i)/nota.length.to_f)
         end
         arr.each do |nombre|
           nombres.push(nombre[0])
