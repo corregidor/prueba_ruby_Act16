@@ -80,7 +80,7 @@ while opcion != 4
         arr.each do |nota|
           notas.push((nota[1].to_i + nota[2].to_i + nota[3].to_i + nota[4].to_i + nota[5].to_i)/5.to_f)
           #falta parametrizar el largo del arreglo
-          #notas.push((nota[1].to_i + nota[2].to_i + nota[3].to_i + nota[4].to_i + nota[5].to_i)/nota.length.to_f)
+          #notas.push((nota[1].to_i + nota[2].to_i + nota[3].to_i + nota[4].to_i + nota[5].to_i)/(nota.length-1).to_f)
         end
         arr.each do |nombre|
           nombres.push(nombre[0])
